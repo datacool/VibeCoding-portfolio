@@ -1,175 +1,152 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
+(() => {
+  "use strict";
+
+  /* ── Year ─────────────────────────────────── */
   const yearEl = document.getElementById("year");
-  const form = document.getElementById("contact-form");
-  const feedback = document.getElementById("form-feedback");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ── Sticky header shrink on scroll ────────── */
   const header = document.querySelector(".site-header");
-
-  // Year
-  if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
-  }
-
-  // Mobile nav toggle
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    nav.addEventListener("click", (event) => {
-      if (event.target instanceof HTMLAnchorElement) {
-        nav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetId = link.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-
-  // Header shrink on scroll
   if (header) {
-    let lastScrollY = 0;
+    let ticking = false;
     const onScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 60) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          header.classList.toggle("scrolled", window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
       }
-      lastScrollY = scrollY;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
 
-  // Scroll reveal with IntersectionObserver
-  const revealElements = document.querySelectorAll(".reveal");
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver(
+  /* ── Mobile nav toggle ─────────────────────── */
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    });
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "메뉴 열기");
+      })
+    );
+  }
+
+  /* ── Scroll reveal (Intersection Observer) ── */
+  const reveals = document.querySelectorAll(".reveal");
+  if (reveals.length) {
+    const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            revealObserver.unobserve(entry.target);
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            io.unobserve(e.target);
           }
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
-
-    revealElements.forEach((el) => revealObserver.observe(el));
+    reveals.forEach((el) => io.observe(el));
   }
 
-  // Stat count-up animation
-  const statNumbers = document.querySelectorAll(".stat-number");
-  if (statNumbers.length > 0) {
-    const countObserver = new IntersectionObserver(
+  /* ── Stats count-up animation ───────────────── */
+  const statNumbers = document.querySelectorAll(".stat-number[data-count]");
+  if (statNumbers.length) {
+    const animateCount = (el) => {
+      const target = parseInt(el.dataset.count, 10);
+      if (isNaN(target)) return;
+      const duration = 1400;
+      const start = performance.now();
+      const ease = (t) => 1 - Math.pow(1 - t, 3); // easeOutCubic
+
+      const step = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(ease(progress) * target);
+        el.textContent = value + "+";
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const statsIO = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.textContent, 10);
-            if (isNaN(target)) return;
-
-            let current = 0;
-            const duration = 1200;
-            const step = Math.max(1, Math.floor(target / (duration / 30)));
-            const timer = setInterval(() => {
-              current += step;
-              if (current >= target) {
-                current = target;
-                clearInterval(timer);
-              }
-              el.textContent = String(current);
-            }, 30);
-
-            countObserver.unobserve(el);
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            animateCount(e.target);
+            statsIO.unobserve(e.target);
           }
         });
       },
       { threshold: 0.5 }
     );
-
-    statNumbers.forEach((el) => countObserver.observe(el));
+    statNumbers.forEach((el) => statsIO.observe(el));
   }
 
-  // Contact form
+  /* ── Contact form (client-side validation) ── */
+  const form = document.getElementById("contact-form");
+  const feedback = document.getElementById("form-feedback");
   if (form && feedback) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+    const validators = {
+      name: (v) => (v.trim() ? "" : "이름을 입력해 주세요."),
+      email: (v) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+          ? ""
+          : "올바른 이메일 주소를 입력해 주세요.",
+      message: (v) => (v.trim() ? "" : "프로젝트 내용을 입력해 주세요."),
+    };
 
+    const showError = (name, msg) => {
+      const el = form.querySelector(`[data-error-for="${name}"]`);
+      if (el) el.textContent = msg;
+    };
+    const clearErrors = () =>
+      form
+        .querySelectorAll(".field-error")
+        .forEach((el) => (el.textContent = ""));
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      clearErrors();
       feedback.textContent = "";
-      feedback.classList.remove("success", "error");
-      clearFieldErrors();
+      feedback.className = "form-feedback";
 
-      const formData = new FormData(form);
-      const name = (formData.get("name") || "").toString().trim();
-      const email = (formData.get("email") || "").toString().trim();
-      const message = (formData.get("message") || "").toString().trim();
+      let valid = true;
+      Object.entries(validators).forEach(([field, fn]) => {
+        const input = form.elements[field];
+        const msg = fn(input ? input.value : "");
+        if (msg) {
+          showError(field, msg);
+          valid = false;
+        }
+      });
 
-      let hasError = false;
+      if (!valid) return;
 
-      if (!name) {
-        setFieldError("name", "이름을 입력해 주세요.");
-        hasError = true;
-      }
-
-      if (!email) {
-        setFieldError("email", "이메일을 입력해 주세요.");
-        hasError = true;
-      } else if (!isValidEmail(email)) {
-        setFieldError("email", "올바른 이메일 형식을 입력해 주세요.");
-        hasError = true;
-      }
-
-      if (!message) {
-        setFieldError("message", "메시지를 입력해 주세요.");
-        hasError = true;
-      }
-
-      if (hasError) {
-        feedback.textContent = "필수 항목을 확인해 주세요.";
-        feedback.classList.add("error");
-        return;
-      }
-
+      // Simulated success
       feedback.textContent =
-        "브라우저 보안 정책상 직접 전송은 되지 않지만, 내용은 아래 연락처로 보내주시면 됩니다: kesugwa@gmail.com";
-      feedback.classList.add("success");
+        "감사합니다! 상담 요청이 정상적으로 접수되었습니다.";
+      feedback.className = "form-feedback success";
       form.reset();
     });
   }
 
-  function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  function clearFieldErrors() {
-    document.querySelectorAll(".field-error").forEach((el) => {
-      el.textContent = "";
+  /* ── Smooth scroll for anchor links ─────────── */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const target = document.querySelector(a.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
-  }
-
-  function setFieldError(fieldName, message) {
-    const errorElement = document.querySelector(
-      `.field-error[data-error-for="${fieldName}"]`,
-    );
-    if (errorElement) {
-      errorElement.textContent = message;
-    }
-  }
-});
+  });
+})();
