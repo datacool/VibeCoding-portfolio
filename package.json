@@ -1,0 +1,11 @@
+{
+  "name": "vibecoding-portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
