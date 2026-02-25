@@ -4,11 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   const form = document.getElementById("contact-form");
   const feedback = document.getElementById("form-feedback");
+  const header = document.querySelector(".site-header");
 
+  // Year
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  // Mobile nav toggle
   if (navToggle && nav) {
     navToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
@@ -23,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
@@ -36,6 +40,74 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Header shrink on scroll
+  if (header) {
+    let lastScrollY = 0;
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 60) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+      lastScrollY = scrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Scroll reveal with IntersectionObserver
+  const revealElements = document.querySelectorAll(".reveal");
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
+
+  // Stat count-up animation
+  const statNumbers = document.querySelectorAll(".stat-number");
+  if (statNumbers.length > 0) {
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.textContent, 10);
+            if (isNaN(target)) return;
+
+            let current = 0;
+            const duration = 1200;
+            const step = Math.max(1, Math.floor(target / (duration / 30)));
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.textContent = String(current);
+            }, 30);
+
+            countObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statNumbers.forEach((el) => countObserver.observe(el));
+  }
+
+  // Contact form
   if (form && feedback) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -101,4 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
