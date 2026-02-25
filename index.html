@@ -2,21 +2,11 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Ken Kim | AI Vibe Coding Consultant</title>
-    <meta
-      name="description"
-      content="AI 바이브코딩으로 문제를 정의하고 해법을 설계하는 전문 컨설턴트 Ken Kim. NVIDIA/Oracle 인증 전문가로서 LLM, Agentic AI를 활용한 실전 솔루션을 제공합니다."
-    />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-    />
+    <meta name="description" content="AI 바이브코딩으로 문제를 정의하고 해법을 설계하는 전문 컨설턴트 Ken Kim. NVIDIA/Oracle 인증 전문가." />
+    <meta name="theme-color" content="#090E1A" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -29,14 +19,7 @@
             <span class="logo-sub">AI Vibe Coding Consultant</span>
           </span>
         </a>
-        <button
-          class="nav-toggle"
-          aria-label="메뉴 열기"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-        </button>
+        <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button>
         <nav class="nav">
           <ul>
             <li><a href="#about">About</a></li>
@@ -50,418 +33,149 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-bg-overlay" aria-hidden="true">
-          <img
-            src="assets/hero-vibecoding-consultant.png"
-            alt=""
-            class="hero-bg-image"
-          />
-          <div class="hero-bg-gradient"></div>
+        <div class="hero-bg-gallery" aria-hidden="true">
+          <div class="hero-bg hero-bg-left"><img src="assets/project-aira-screenshot.png" alt="" /></div>
+          <div class="hero-bg hero-bg-right"><img src="assets/project-genart-screenshot.png" alt="" /></div>
         </div>
-        <div class="container hero-content">
+        <div class="container hero-grid">
           <div class="hero-text">
             <p class="eyebrow">Problem Solving with AI Vibe Coding</p>
-            <h1>
-              문제를 정의하고,<br />
-              AI와 함께 <span class="accent">해법을 설계</span>합니다.
-            </h1>
-            <p class="hero-sub">
-              NVIDIA/Oracle 인증 AI 전문가로서, LLM과 에이전틱 AI를 활용해
-              <strong>비즈니스 문제를 구조화</strong>하고 바이브코딩으로
-              빠르게 솔루션을 프로토타이핑합니다.
-            </p>
+            <h1>문제를 정의하고,<br />AI와 함께 <span class="accent">해법을 설계</span>합니다.</h1>
+            <p class="hero-sub">LLM과 에이전틱 AI를 활용해 복잡한 비즈니스 문제를 구조화하고, <strong>바이브코딩(Vibe Coding)</strong>으로 빠르게 프로토타이핑하여 실제 서비스로 연결하는 전문 컨설턴트입니다.</p>
+            <div class="hero-process" aria-label="Vibe Coding 프로세스">
+              <div class="hero-process-step"><span class="hero-process-num">01</span><span class="hero-process-label">문제 정의</span></div>
+              <span class="hero-process-arrow" aria-hidden="true">&#8594;</span>
+              <div class="hero-process-step"><span class="hero-process-num">02</span><span class="hero-process-label">AI 분석</span></div>
+              <span class="hero-process-arrow" aria-hidden="true">&#8594;</span>
+              <div class="hero-process-step"><span class="hero-process-num">03</span><span class="hero-process-label">Vibe Coding</span></div>
+              <span class="hero-process-arrow" aria-hidden="true">&#8594;</span>
+              <div class="hero-process-step"><span class="hero-process-num">04</span><span class="hero-process-label">솔루션 도출</span></div>
+            </div>
             <div class="hero-actions">
-              <a href="#projects" class="btn primary">프로젝트 보기</a>
+              <a href="#projects" class="btn primary">프로젝트 보러가기</a>
               <a href="#contact" class="btn ghost">프로젝트 상담 요청</a>
             </div>
+            <dl class="hero-stats" aria-label="프로젝트 주요 지표">
+              <div><dt>AI 서비스 실험</dt><dd><span class="stat-number" data-count="10">0</span>Vibe Coding Prototype</dd></div>
+              <div><dt>실서비스 런칭</dt><dd><span class="stat-number" data-count="2">0</span>AIRA &middot; GenArt</dd></div>
+              <div><dt>전문 자격</dt><dd><span class="stat-number" data-count="3">0</span>NVIDIA &middot; Oracle</dd></div>
+            </dl>
           </div>
-
-          <div class="hero-process reveal" aria-label="Vibe Coding 프로세스">
-            <div class="process-step">
-              <div class="process-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </div>
-              <span class="process-label">Problem<br/>Define</span>
-            </div>
-            <div class="process-connector" aria-hidden="true"></div>
-            <div class="process-step">
-              <div class="process-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"/><circle cx="12" cy="15" r="2"/></svg>
-              </div>
-              <span class="process-label">AI<br/>Analysis</span>
-            </div>
-            <div class="process-connector" aria-hidden="true"></div>
-            <div class="process-step">
-              <div class="process-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <span class="process-label">Vibe<br/>Coding</span>
-            </div>
-            <div class="process-connector" aria-hidden="true"></div>
-            <div class="process-step">
-              <div class="process-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <span class="process-label">Solution<br/>Delivery</span>
-            </div>
+          <div class="hero-visual">
+            <figure class="hero-image-wrapper">
+              <img src="assets/hero-vibecoding-consultant.png" alt="AI 문제해결을 하는 바이브코딩 컨설턴트" class="hero-image" />
+              <figcaption class="hero-image-caption">AI를 활용해 복잡한 문제를 구조화하고 해결 전략을 설계하는 <strong>Vibe Coding Consultant</strong></figcaption>
+            </figure>
           </div>
-
-          <dl class="hero-stats reveal reveal-delay-1" aria-label="프로젝트 주요 지표">
-            <div class="stat-item" data-count="10">
-              <dd><span class="stat-number">10</span>+</dd>
-              <dt>Vibe Coding Prototypes</dt>
-            </div>
-            <div class="stat-item">
-              <dd><span class="stat-number">2</span></dd>
-              <dt>Live Services (AIRA, GenArt)</dt>
-            </div>
-            <div class="stat-item">
-              <dd><span class="stat-number">3</span></dd>
-              <dt>Professional Certifications</dt>
-            </div>
-          </dl>
         </div>
       </section>
 
       <section id="about" class="section">
-        <div class="container section-header">
-          <h2>About · Approach</h2>
-          <p>
-            AI를 실험적인 파트너로 두고, 문제의 본질을 먼저 정의한 뒤
-            바이브코딩으로 해법을 설계합니다.
-          </p>
-        </div>
-        <div class="container about-layout">
-          <div class="about-intro reveal">
-            <h3 class="about-headline">
-              코드 이전에 <span class="accent">문제를 구조화</span>하고,<br />
-              AI와 함께 최적의 해법을 찾습니다.
-            </h3>
-            <p class="about-body">
-              [Byte Degree] Vibe Coding for AI Service 과정을 기반으로,
-              LLM과 상호작용하며 서비스의 IA, 화면 플로우, 카피, 데이터 흐름을
-              동시에 진화시키는 <strong>AI First Loop</strong>를 운영합니다.
-              단순 개발이 아닌, 비즈니스 문제를 AI로 해결하는 전 과정을 설계합니다.
-            </p>
-          </div>
-          <div class="about-process-grid reveal reveal-delay-1">
-            <article class="process-card">
-              <div class="process-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              </div>
-              <h4>Problem Definition</h4>
-              <p>비즈니스 맥락을 분석하고 핵심 문제를 자연어로 명확히 정의합니다.</p>
-            </article>
-            <article class="process-card">
-              <div class="process-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"/><circle cx="12" cy="15" r="2"/></svg>
-              </div>
-              <h4>AI-Powered Design</h4>
-              <p>LLM과 에이전틱 AI로 솔루션 구조, UX, 데이터 흐름을 동시에 설계합니다.</p>
-            </article>
-            <article class="process-card">
-              <div class="process-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <h4>Vibe Prototyping</h4>
-              <p>아이디어의 분위기(Vibe)를 코드로 빠르게 구현하고 반복 실험합니다.</p>
-            </article>
-            <article class="process-card">
-              <div class="process-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h4>Feedback Loop</h4>
-              <p>실사용자 피드백과 AI 분석을 결합해 솔루션을 지속적으로 개선합니다.</p>
-            </article>
-          </div>
+        <div class="container section-header reveal"><h2>About</h2><p>AI를 실험적인 파트너로 두고, <strong>문제의 본질</strong>을 먼저 정의한 뒤 바이브코딩으로 해법을 빠르게 검증합니다.</p></div>
+        <div class="container about-grid">
+          <article class="about-card reveal reveal-delay-1">
+            <h3>Vibe Coding for AI Service</h3>
+            <p>자연어로 아이디어의 분위기(Vibe)를 정의하고, LLM과 상호작용하며 IA, 화면 플로우, 카피, 데이터 흐름을 동시에 진화시킵니다. <strong>[Byte Degree] Vibe Coding for AI Service</strong> 과정에서 AI 서비스 기획부터 프로토타이핑까지 전 과정을 실습했습니다.</p>
+            <ul class="tag-list"><li>Prompt 기반 서비스 설계</li><li>Agentic Flow 디자인</li><li>사용자 경험 실험</li></ul>
+          </article>
+          <article class="about-card reveal reveal-delay-2">
+            <h3>AI First 프로토타이핑</h3>
+            <p>코드 이전에 AI와 함께 <strong>스토리, 톤앤매너, 인터랙션</strong>을 설계합니다. 이후 HTML/CSS/JS로 빠르게 구현하고, 다시 LLM에게 피드백을 받아 반복 개선하는 <strong>AI First Loop</strong>를 운영합니다.</p>
+            <ul class="tag-list"><li>AI Assisted Design</li><li>Low-code to Code</li><li>실사용자 피드백 반영</li></ul>
+          </article>
         </div>
       </section>
 
       <section id="projects" class="section section-alt">
-        <div class="container section-header">
-          <h2>Projects · Problem Solving Cases</h2>
-          <p>
-            각 프로젝트는 실제 문제를 정의하고, AI 바이브코딩으로
-            해법을 설계-구현한 사례입니다.
-          </p>
-        </div>
-
-        <div class="container projects-layout">
-          <!-- Featured Project -->
+        <div class="container section-header reveal"><h2>Projects &middot; Vibe Coding Cases</h2><p>바이브코딩을 통해 <strong>문제 정의에서 솔루션 도출까지</strong> 실제로 구현한 프로젝트들입니다.</p></div>
+        <div class="container projects-grid">
           <article class="project-card project-card--featured reveal">
-            <div class="project-thumb project-thumb--wide">
-              <img
-                src="AIRA%20화면%20캡처%202026-02-25.png"
-                alt="AIRA AI 창작물 마켓플레이스 메인 화면 캡처"
-              />
-            </div>
-            <div class="project-body">
-              <div class="project-tag">Featured · AI Marketplace</div>
+            <div class="project-thumb"><img src="AIRA%20화면%20캡처%202026-02-25.png" alt="AIRA AI 창작물 마켓플레이스 메인 화면" /></div>
+            <div class="project-content">
+              <div class="project-tag">Vibe Coding &middot; Marketplace</div>
               <h3>AIRA &mdash; AI 창작물 마켓플레이스</h3>
-              <div class="project-problem-solution">
-                <div class="ps-block">
-                  <span class="ps-label ps-label--problem">Problem</span>
-                  <p>AI 창작물(웹툰, 이미지, 음악 등)의 거래 생태계가 부재하여 창작자와 소비자가 만날 수 없는 구조적 문제.</p>
-                </div>
-                <div class="ps-block">
-                  <span class="ps-label ps-label--solution">Solution</span>
-                  <p>카테고리 구조, 추천 영역, 창작자 센터 플로우를 Vibe Coding으로 설계하고 반응형 마켓플레이스로 구현.</p>
-                </div>
-              </div>
-              <a
-                href="https://ai-market-opal.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                class="project-link"
-              >
-                Live Demo
-                <span aria-hidden="true">&rarr;</span>
-              </a>
+              <div class="project-problem"><strong>Problem</strong>AI 창작물이 급증하지만, 창작자와 소비자를 연결하는 통합 플랫폼이 부재</div>
+              <p class="project-desc">AI 창작자와 소비자가 만나는 생태계를 가정하고, 카테고리 구조, 추천 영역, 창작자 센터 플로우를 Vibe Coding 방식으로 정의한 뒤 반응형 웹으로 구현했습니다.</p>
+              <ul class="bullet-list"><li>AI 창작물 카테고리 및 랭킹 구조 설계</li><li>창작자 수익 구조 및 가이드 콘텐츠 설계</li><li>모던 그리드 레이아웃과 다크 컬러 시스템 적용</li></ul>
+              <a href="https://ai-market-opal.vercel.app/" target="_blank" rel="noreferrer" class="project-link">사이트 열어보기 <span aria-hidden="true">&#8599;</span></a>
             </div>
           </article>
-
-          <!-- Sub Projects -->
-          <div class="projects-sub-grid reveal reveal-delay-1">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img
-                  src="GenArt%20화면%20캡처%202026-02-25.png"
-                  alt="GenArt AI Generative Art Lab 메인 화면 캡처"
-                />
-              </div>
-              <div class="project-tag">Vibe Coding · Generative Art</div>
-              <h3>GenArt &mdash; AI Art Lab</h3>
-              <div class="project-problem-solution">
-                <div class="ps-block">
-                  <span class="ps-label ps-label--problem">Problem</span>
-                  <p>프롬프트 기반 시각적 실험을 직관적으로 할 수 있는 도구 부재.</p>
-                </div>
-                <div class="ps-block">
-                  <span class="ps-label ps-label--solution">Solution</span>
-                  <p>캔버스 인터랙션과 AI 스타일 추천을 결합한 Generative Art Playground 구현.</p>
-                </div>
-              </div>
-              <a
-                href="https://genart.replit.app/"
-                target="_blank"
-                rel="noreferrer"
-                class="project-link"
-              >
-                Live Demo
-                <span aria-hidden="true">&rarr;</span>
-              </a>
+          <div class="projects-sub-grid">
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-tag">Vibe Coding &middot; Generative Art</div>
+              <h3>GenArt &mdash; AI Generative Art Lab</h3>
+              <div class="project-thumb"><img src="GenArt%20화면%20캡처%202026-02-25.png" alt="GenArt AI 제너레이티브 아트 메인 화면" /></div>
+              <div class="project-problem"><strong>Problem</strong>프롬프트 기반 시각 실험을 쉽게 할 수 있는 인터랙티브 환경이 부족</div>
+              <p class="project-desc">"시각적 리듬"을 먼저 정의하고, AI가 제안한 분위기를 바로 시각화할 수 있는 Playground를 구현했습니다.</p>
+              <a href="https://genart.replit.app/" target="_blank" rel="noreferrer" class="project-link">사이트 열어보기 <span aria-hidden="true">&#8599;</span></a>
             </article>
-
-            <article class="project-card">
-              <div class="project-thumb">
-                <img
-                  src="1771040993081.jpeg"
-                  alt="Fastcampus Vibe Coding for AI Product 1기 Byte Degree 수료증"
-                />
-              </div>
-              <div class="project-tag">Foundation · Byte Degree</div>
+            <article class="project-card reveal reveal-delay-2">
+              <div class="project-tag">Learning &middot; Byte Degree</div>
               <h3>[Byte Degree] Vibe Coding for AI Service</h3>
-              <div class="project-problem-solution">
-                <div class="ps-block">
-                  <span class="ps-label ps-label--problem">Challenge</span>
-                  <p>AI 서비스의 기획부터 프로토타이핑까지 일관된 설계 방법론 확립.</p>
-                </div>
-                <div class="ps-block">
-                  <span class="ps-label ps-label--solution">Outcome</span>
-                  <p>아이디어에서 Vibe 정의, 프로토타입, 피드백 루프까지 체계적 프로세스 구축. AIRA, GenArt로 확장.</p>
-                </div>
-              </div>
+              <div class="project-thumb"><img src="1771040993081.jpeg" alt="Fastcampus Vibe Coding for AI Product 1기 수료증" /></div>
+              <div class="project-problem"><strong>Foundation</strong>LLM과 에이전틱 AI를 활용한 서비스 기획 프로세스 체계화</div>
+              <p class="project-desc">아이디어에서 Vibe 정의, 프로토타입, 피드백 루프까지 반복 구현하며 AIRA, GenArt 프로젝트의 기초를 구축했습니다.</p>
+              <p class="project-note">이 과정에서 정리된 노트와 실습 결과는 현재 포트폴리오의 기초가 되었습니다.</p>
             </article>
           </div>
         </div>
       </section>
 
       <section id="certs" class="section">
-        <div class="container section-header">
-          <h2>Certifications · Verified Credentials</h2>
-          <p>
-            글로벌 AI 기업이 인증한 공식 자격으로, LLM과 Agentic AI에 대한
-            전문성을 검증받았습니다. 각 뱃지를 클릭하면 발급기관의 인증
-            페이지에서 직접 확인할 수 있습니다.
-          </p>
-        </div>
-        <div class="container certs-grid reveal">
-          <a
-            href="https://www.credly.com/badges/a9e40292-05b5-4191-9fc3-aa626a9ed74f/linked_in_profile"
-            target="_blank"
-            rel="noreferrer"
-            class="cert-card cert-card--badge"
-          >
-            <div class="cert-badge-img">
-              <img
-                src="assets/badges/nvidia-agentic-ai.png"
-                alt="NVIDIA Certified Professional: Agentic AI 디지털 뱃지"
-                width="160"
-                height="160"
-                loading="lazy"
-              />
-            </div>
+        <div class="container section-header reveal"><h2>Certifications &middot; Verified Credentials</h2><p>글로벌 AI 기업이 인증한 공식 자격으로, LLM과 Agentic AI에 대한 전문성을 검증받았습니다. 각 뱃지를 클릭하면 발급기관 인증 페이지에서 직접 확인할 수 있습니다.</p></div>
+        <div class="container certs-grid">
+          <a href="https://www.credly.com/badges/a9e40292-05b5-4191-9fc3-aa626a9ed74f/linked_in_profile" target="_blank" rel="noreferrer" class="cert-card cert-card--badge reveal reveal-delay-1">
+            <div class="cert-badge-img"><img src="assets/badges/nvidia-agentic-ai.png" alt="NVIDIA Certified Professional: Agentic AI 디지털 뱃지" width="160" height="160" loading="lazy" /></div>
             <div class="cert-badge-info">
               <span class="cert-issuer">NVIDIA</span>
               <h3>Certified Professional: Agentic AI</h3>
-              <p class="cert-desc">
-                에이전틱 AI 시스템의 설계, 구축, 평가, 운영 역량을 검증하는
-                Professional 레벨 자격. 멀티 에이전트 아키텍처, 분산 추론,
-                배포 및 모니터링 전문성을 인증합니다.
-              </p>
-              <ul class="cert-skills">
-                <li>Agent Architecture</li>
-                <li>Multi-Agent Systems</li>
-                <li>AI Deployment</li>
-              </ul>
-              <span class="cert-verify">
-                Credly에서 인증 확인
-                <span aria-hidden="true">&rarr;</span>
-              </span>
+              <p class="cert-desc">에이전틱 AI 시스템의 설계, 구축, 평가, 운영 역량을 검증하는 Professional 레벨 자격.</p>
+              <ul class="cert-skills"><li>Agent Architecture</li><li>Multi-Agent Systems</li><li>AI Deployment</li></ul>
+              <span class="cert-verify">Credly에서 인증 확인 <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
-
-          <a
-            href="https://www.credly.com/badges/4e81163f-fdf3-409a-b5d5-83a9029e75c3/linked_in_profile"
-            target="_blank"
-            rel="noreferrer"
-            class="cert-card cert-card--badge"
-          >
-            <div class="cert-badge-img">
-              <img
-                src="assets/badges/nvidia-gen-ai-llms.png"
-                alt="NVIDIA Certified Professional: Gen AI LLMs 디지털 뱃지"
-                width="160"
-                height="160"
-                loading="lazy"
-              />
-            </div>
+          <a href="https://www.credly.com/badges/4e81163f-fdf3-409a-b5d5-83a9029e75c3/linked_in_profile" target="_blank" rel="noreferrer" class="cert-card cert-card--badge reveal reveal-delay-2">
+            <div class="cert-badge-img"><img src="assets/badges/nvidia-gen-ai-llms.png" alt="NVIDIA Certified Professional: Gen AI LLMs 디지털 뱃지" width="160" height="160" loading="lazy" /></div>
             <div class="cert-badge-info">
               <span class="cert-issuer">NVIDIA</span>
               <h3>Certified Professional: Gen AI LLMs</h3>
-              <p class="cert-desc">
-                LLM의 적응, 최적화, 배포에 대한 고급 전문성을 검증하는 자격.
-                데이터 준비, 파인튜닝, GPU 가속, TensorRT-LLM 등
-                NVIDIA 도구 활용 역량을 인증합니다.
-              </p>
-              <ul class="cert-skills">
-                <li>LLM Fine-Tuning</li>
-                <li>GPU Acceleration</li>
-                <li>Model Optimization</li>
-              </ul>
-              <span class="cert-verify">
-                Credly에서 인증 확인
-                <span aria-hidden="true">&rarr;</span>
-              </span>
+              <p class="cert-desc">LLM의 적응, 최적화, 배포에 대한 고급 전문성을 검증하는 자격.</p>
+              <ul class="cert-skills"><li>LLM Fine-Tuning</li><li>GPU Acceleration</li><li>Model Optimization</li></ul>
+              <span class="cert-verify">Credly에서 인증 확인 <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
-
-          <a
-            href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C1428EB78EAA58D2C7E89B066A3F764F00CF9B798777F4DCC696542F3C2C845B"
-            target="_blank"
-            rel="noreferrer"
-            class="cert-card cert-card--badge"
-          >
-            <div class="cert-badge-img">
-              <img
-                src="assets/badges/oci-genai-professional-2025.png"
-                alt="Oracle Cloud Infrastructure 2025 Generative AI Professional 디지털 뱃지"
-                width="160"
-                height="160"
-                loading="lazy"
-              />
-            </div>
+          <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C1428EB78EAA58D2C7E89B066A3F764F00CF9B798777F4DCC696542F3C2C845B" target="_blank" rel="noreferrer" class="cert-card cert-card--badge reveal reveal-delay-3">
+            <div class="cert-badge-img"><img src="assets/badges/oci-genai-professional-2025.png" alt="Oracle OCI 2025 Generative AI Professional 디지털 뱃지" width="160" height="160" loading="lazy" /></div>
             <div class="cert-badge-info">
               <span class="cert-issuer">Oracle</span>
               <h3>OCI 2025 Generative AI Professional</h3>
-              <p class="cert-desc">
-                OCI Generative AI 서비스를 활용한 LLM 애플리케이션 구축 역량을
-                검증하는 자격. RAG, 시맨틱 검색, 벡터 DB, LangChain 등의
-                기술 활용 능력을 인증합니다.
-              </p>
-              <ul class="cert-skills">
-                <li>OCI Gen AI Service</li>
-                <li>RAG Pipeline</li>
-                <li>Vector Database</li>
-              </ul>
-              <span class="cert-verify">
-                Oracle에서 인증 확인
-                <span aria-hidden="true">&rarr;</span>
-              </span>
+              <p class="cert-desc">OCI Generative AI 서비스를 활용한 LLM 애플리케이션 구축 역량을 검증하는 자격.</p>
+              <ul class="cert-skills"><li>OCI Gen AI Service</li><li>RAG Pipeline</li><li>Vector Database</li></ul>
+              <span class="cert-verify">Oracle에서 인증 확인 <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
         </div>
       </section>
 
       <section id="contact" class="section section-alt">
-        <div class="container section-header">
-          <h2>Contact · Project Inquiry</h2>
-          <p>
-            AI 바이브코딩을 활용한 문제 해결, 서비스 설계, 프로토타이핑에 대해
-            상담을 원하시면 편하게 연락 주세요.
-          </p>
-        </div>
-        <div class="container contact-grid reveal">
-          <div class="contact-info">
-            <h3>Direct Contact</h3>
-            <p>
-              프로젝트 상담이나 협업 제안을 환영합니다.
-            </p>
+        <div class="container section-header reveal"><h2>Contact</h2><p>바이브코딩 기반 AI 서비스 기획, LLM/Agentic AI 활용, 프로토타이핑에 대한 프로젝트 상담이 필요하시면 언제든 연락해 주세요.</p></div>
+        <div class="container contact-grid">
+          <div class="contact-info reveal reveal-delay-1">
+            <h3>Direct</h3>
+            <p>아래 연락처로 직접 문의를 주셔도 좋습니다.</p>
             <ul class="contact-list">
-              <li>
-                <span>이메일</span>
-                <a href="mailto:kesugwa@gmail.com">kesugwa@gmail.com</a>
-              </li>
-              <li>
-                <span>전화</span>
-                <a href="tel:01040791975">010-4079-1975</a>
-              </li>
+              <li><span>이메일</span><a href="mailto:kesugwa@gmail.com">kesugwa@gmail.com</a></li>
+              <li><span>전화</span><a href="tel:01040791975">010-4079-1975</a></li>
             </ul>
           </div>
-          <div class="contact-form-wrapper">
-            <h3>Project Inquiry</h3>
+          <div class="contact-form-wrapper reveal reveal-delay-2">
+            <h3>프로젝트 상담 요청</h3>
             <form id="contact-form" novalidate>
-              <div class="field">
-                <label for="name">이름</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="이름을 입력해 주세요."
-                  required
-                />
-                <p class="field-error" data-error-for="name"></p>
-              </div>
-              <div class="field">
-                <label for="email">이메일</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="example@email.com"
-                  required
-                />
-                <p class="field-error" data-error-for="email"></p>
-              </div>
-              <div class="field">
-                <label for="message">메시지</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="프로젝트 아이디어나 협업 제안을 자유롭게 작성해 주세요."
-                  required
-                ></textarea>
-                <p class="field-error" data-error-for="message"></p>
-              </div>
-              <button type="submit" class="btn primary full">
-                프로젝트 상담 요청
-              </button>
-              <p
-                id="form-feedback"
-                class="form-feedback"
-                aria-live="polite"
-              ></p>
+              <div class="field"><label for="name">이름</label><input type="text" id="name" name="name" placeholder="이름을 입력해 주세요." required /><p class="field-error" data-error-for="name"></p></div>
+              <div class="field"><label for="email">이메일</label><input type="email" id="email" name="email" placeholder="example@email.com" required /><p class="field-error" data-error-for="email"></p></div>
+              <div class="field"><label for="message">프로젝트 내용</label><textarea id="message" name="message" rows="4" placeholder="해결하고 싶은 문제나 프로젝트 아이디어를 자유롭게 작성해 주세요." required></textarea><p class="field-error" data-error-for="message"></p></div>
+              <button type="submit" class="btn primary full">상담 요청 보내기</button>
+              <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -470,14 +184,10 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Ken Kim · AI Vibe Coding Consultant</p>
-        <p class="footer-note">
-          AI와 함께 설계하고, 바이브코딩으로 구현한 포트폴리오입니다.
-        </p>
+        <p>&copy; <span id="year"></span> Ken Kim &middot; AI Vibe Coding Consultant</p>
+        <p class="footer-note">이 페이지는 AI와 함께 설계한 바이브코딩 결과물입니다.</p>
       </div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
-
