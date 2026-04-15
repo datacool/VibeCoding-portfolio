@@ -133,6 +133,10 @@ main { padding-bottom: 0; }
 .projects-sub-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .project-thumb { overflow: hidden; border-radius: 14px; border: 1px solid rgba(20,184,166,0.1); margin: 8px 0 12px; height: 180px; }
 .project-thumb img { width: 100%; display: block; height: 100%; object-fit: cover; transform: scale(1.01); transition: transform 0.3s ease-out, filter 0.3s ease-out; }
+.project-thumb--duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: rgba(20,184,166,0.08); }
+.project-thumb--duo img { height: 100%; object-fit: cover; object-position: top center; transform: scale(1.01); transition: transform 0.3s ease-out, filter 0.3s ease-out; }
+.project-card--featured .project-thumb--duo { border-radius: 18px 0 0 18px; border: none; border-right: 1px solid rgba(20,184,166,0.08); height: 100%; margin: 0; }
+.project-card--featured .project-thumb--duo img { border-radius: 0; }
 .project-card:hover .project-thumb img { transform: scale(1.05); filter: saturate(1.1); }
 .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(20,184,166,0.06); border: 1px solid rgba(20,184,166,0.15); color: var(--accent); font-size: 0.72rem; font-weight: 500; margin-bottom: 8px; width: fit-content; }
 .project-problem { margin: 0 0 10px; padding: 10px 14px; border-radius: 10px; background: rgba(20,184,166,0.04); border-left: 3px solid var(--accent); font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
