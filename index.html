@@ -57,7 +57,7 @@
             </div>
             <dl class="hero-stats" aria-label="프로젝트 주요 지표">
               <div><dt>AI 서비스 실험</dt><dd><span class="stat-number" data-count="10">0</span>Vibe Coding Prototype</dd></div>
-              <div><dt>실서비스 런칭</dt><dd><span class="stat-number" data-count="2">0</span>AIRA &middot; GenArt</dd></div>
+              <div><dt>실서비스 런칭</dt><dd><span class="stat-number" data-count="4">0</span>AIRA &middot; GenArt &middot; 혜안 &middot; AIFitDay</dd></div>
               <div><dt>전문 자격</dt><dd><span class="stat-number" data-count="3">0</span>NVIDIA &middot; Oracle</dd></div>
             </dl>
           </div>
@@ -110,13 +110,33 @@
             </div>
           </article>
           <article class="project-card project-card--featured reveal reveal-delay-2">
-            <div class="project-thumb"><img src="1771040993081.jpeg" alt="Fastcampus Vibe Coding for AI Product 1기 수료증" /></div>
+            <div class="project-thumb"><img src="assets/project-hyean-screenshot.png" alt="혜안 AI 운세 서비스 메인 화면" /></div>
             <div class="project-content">
-              <div class="project-tag">Learning &middot; Byte Degree</div>
-              <h3>[Byte Degree] Vibe Coding for AI Service</h3>
-              <div class="project-problem"><strong>Foundation</strong>LLM과 에이전틱 AI를 활용한 서비스 기획 프로세스 체계화</div>
-              <p class="project-desc">아이디어에서 Vibe 정의, 프로토타입, 피드백 루프까지 반복 구현하며 AIRA, GenArt 프로젝트의 기초를 구축했습니다.</p>
-              <p class="project-note">이 과정에서 정리된 노트와 실습 결과는 현재 포트폴리오의 기초가 되었습니다.</p>
+              <div class="project-tag">Vibe Coding &middot; AI Service</div>
+              <h3>혜안 &mdash; AI 사주·타로·꿈해몽</h3>
+              <div class="project-problem"><strong>Problem</strong>전통 운세 상담은 전문가 의존적이며, AI 기반 개인화 서비스가 부재</div>
+              <p class="project-desc">만세력 사주 계산, 78장 타로 카드, 꿈해몽 RAG를 LLM과 통합하여 개인화된 운세 상담을 제공하는 Modern Spiritual 서비스를 바이브코딩으로 구현했습니다.</p>
+              <ul class="bullet-list">
+                <li>Dify API 기반 AI 에이전트 연동 (사주·타로·꿈해몽 독립 모듈)</li>
+                <li>78장 타로 카드 DB 및 AI 스토리텔링 해석</li>
+                <li>신비로운 Modern Spiritual 다크 UI/UX 설계</li>
+              </ul>
+              <p class="project-note">Next.js · Dify API · TypeScript · Tailwind CSS</p>
+            </div>
+          </article>
+          <article class="project-card project-card--featured reveal">
+            <div class="project-thumb"><img src="assets/project-aifitday-screenshot.png" alt="AIFitDay AI 할일 관리 및 날씨 허브 메인 화면" /></div>
+            <div class="project-content">
+              <div class="project-tag">Vibe Coding &middot; Productivity</div>
+              <h3>AIFitDay &mdash; AI Todo &amp; Weather Manager</h3>
+              <div class="project-problem"><strong>Problem</strong>할 일 관리와 날씨 정보가 분리되어, 맥락 기반 하루 계획 수립이 어려움</div>
+              <p class="project-desc">자연어로 할 일을 입력하면 AI가 자동으로 구조화하고, 날씨 기반 활동지수와 옷차림 추천까지 통합한 개인 생산성 서비스를 바이브코딩으로 구현했습니다.</p>
+              <ul class="bullet-list">
+                <li>자연어 → AI 할일 자동 구조화 (제목·마감일·우선순위 자동 추출)</li>
+                <li>날씨 허브: 오늘/내일/주간 예보 + 활동지수 + 캐릭터 옷차림 추천</li>
+                <li>AI 일간·주간 요약 분석 및 Supabase 기반 개인 데이터 격리</li>
+              </ul>
+              <p class="project-note">Next.js · Supabase · Google Gemini · WeatherAPI</p>
             </div>
           </article>
         </div>
@@ -155,6 +175,17 @@
               <span class="cert-verify">Oracle에서 인증 확인 <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
+          <div class="cert-card cert-card--certificate reveal reveal-delay-4">
+            <div class="cert-cert-thumb">
+              <img src="1771040993081.jpeg" alt="Fastcampus × Vibe Coding — Vibe Coding for AI Product 1기 수료증" loading="lazy" />
+            </div>
+            <div class="cert-badge-info">
+              <span class="cert-issuer">Fastcampus &times; Vibe Coding</span>
+              <h3>[Byte Degree] Vibe Coding for AI Service</h3>
+              <p class="cert-desc">LLM과 에이전틱 AI를 활용한 서비스 기획, 프로토타이핑, 피드백 루프 전 과정을 이수한 수료 과정. AIRA·GenArt·혜안·AIFitDay 프로젝트의 기반을 구축했습니다.</p>
+              <ul class="cert-skills"><li>Service Planning</li><li>AI Prototyping</li><li>Vibe Coding Loop</li></ul>
+            </div>
+          </div>
         </div>
       </section>
 
